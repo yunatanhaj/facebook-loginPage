@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .login-container {
+            width: 360px;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-container h2 {
+            color: #1877f2;
+            margin-bottom: 24px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            background-color: #1877f2;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #166fe5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Log in to Facebook</h2>
+    <input type="text" id="username" placeholder="Email or Phone Number" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="saveCredentials()">Log In</button>
+</div>
+
+<script>
+    function saveCredentials() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        if (username && password) {
+            // Save credentials in local storage (insecure for real applications)
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+        } else {
+            alert("Please enter both username and password.");
+        }
+    }
+</script>
+
+</body>
+</html>
